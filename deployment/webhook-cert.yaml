@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: volumes-webhook-cert
+  namespace: cdp-customizer
+spec:
+  secretName: volumes-customizer-admission-manager-certs
+  subject:
+    organizations:
+    - dce
+  usages:
+    - digital signature
+    - key encipherment
+    - server auth
+    - client auth
+  dnsNames:
+  - volumes-admission-manager
+  - volumes-admission-manager.cdp-customizer
+  - volumes-admission-manager.cdp-customizer.svc
+  - volumes-admission-manager.cdp-customizer.svc.cluster.local
+  ipAddresses:
+  - 127.0.0.1
+  issuerRef:
+    name: k8s-ca-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
