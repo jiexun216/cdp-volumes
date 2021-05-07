@@ -18,8 +18,8 @@ spec:
       containers:
         - name: cdp-volumes-customizer
           env:
-            - name: ADD_SECURITRYCONEXT_PER_POD
-              value: "false"
+            - name: LABEL_SELECTOR_CONFIGMAP
+              value: "cdp.cloudera.io/volumes"
           image: daocloud.io/daocloud/cdp-volumes-customizer:latest
           imagePullPolicy: Always
           args:
