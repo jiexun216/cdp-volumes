@@ -270,7 +270,7 @@ func getConfigMap() map[string]string {
 		//MatchLabels: map[string]string{"cdp.cloudera.io/security-context":"true"},
 		MatchExpressions: []metav1.LabelSelectorRequirement{
 			{
-				Key:      "cdp.cloudera.io/security-context",
+				Key:      "cdp.cloudera.io/volumes",
 				Operator: "Exists",
 			},
 		},
