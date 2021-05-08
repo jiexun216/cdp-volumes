@@ -268,7 +268,7 @@ func getConfigMap() map[string]string {
 	configMapClient := clientset.CoreV1().ConfigMaps("cdp-customizer")
 	// labelSelector cdp.cloudera.io/volumes
 	labelSelector := metav1.LabelSelector{
-		//MatchLabels: map[string]string{"cdp.cloudera.io/security-context":"true"},
+		//MatchLabels: map[string]string{"cdp.cloudera.io/volumes":"true"},
 		MatchExpressions: []metav1.LabelSelectorRequirement{
 			{
 				Key:      os.Getenv("LABEL_SELECTOR_CONFIGMAP"),
